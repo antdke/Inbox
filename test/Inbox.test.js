@@ -18,11 +18,21 @@ class Car {
 
 // mocha test code
 
+// this code runs before each it() function
+let car;
+
+beforeEach(() => {
+  car = new Car();
+});
+
 describe('Car', () => {
   it('can park', () => {
     // create an instance of Car and test it
-    const car = new Car();
     assert.equal(car.park(), 'stopped');
+  })
+
+  it('can drive', () => {
+    assert.equal(car.drive(), 'vroom');
   })
 })
 
